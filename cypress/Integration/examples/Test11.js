@@ -2,21 +2,21 @@
 
 describe('My eleventh test suite', () => {
 
-    before(function(){
+    before('Data',function(){
         //runs once before all tests in the block
         cy.fixture('example').then(function(data){
-            data
+            this.user = data
         })
     })
 
-    it('Hooks', () => {
+    it('Hooks', function() {
 
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
-        cy.get('[name="name"]').eq(0).type('Testing')
-        cy.get('[name="email"]').type('test@yopmail.com')
-        cy.get('#exampleInputPassword1').type('Password123')
+        cy.visit(this.user.url)
+        cy.get('[name="name"]').eq(0).type(this.user.name)
+        cy.get('[name="email"]').type(this.user.email)
+        cy.get('#exampleInputPassword1').type(this.user.password)
         cy.get('#exampleCheck1').check()
-        cy.get('#exampleFormControlSelect1').select('Female')
+        cy.get('#exampleFormControlSelect1').select(this.user.gender)
         cy.get('#inlineRadio2').click()
         // cy.get('[href*="shop"]').click()
 

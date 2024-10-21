@@ -6,7 +6,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/integration/examples/*.js',
-    video: true,
+    fixturesFolder: "cypress/fixtures"
+
     
   },
 });

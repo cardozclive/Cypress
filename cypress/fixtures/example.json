@@ -1,6 +1,7 @@
 {
+  "url": "https://rahulshettyacademy.com/angularpractice/",
   "name": "Testing",
-  "Email": "test@yopmail.com",
+  "email": "test@yopmail.com",
   "password": "Password@123",
   "gender": "Female"
 }
