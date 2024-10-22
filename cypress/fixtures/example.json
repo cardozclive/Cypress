@@ -3,5 +3,6 @@
   "name": "Testing",
   "email": "test@yopmail.com",
   "password": "Password@123",
-  "gender": "Female"
+  "gender": "Female",
+  "productName" : ["Blackberry", "Nokia Edge", "iphone X"]
 }
