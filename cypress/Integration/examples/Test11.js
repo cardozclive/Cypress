@@ -1,4 +1,5 @@
 /// <reference types = 'cypress'/>
+import HomePage from '../pageObjects/homepage'
 
 describe('My eleventh test suite', () => {
 
@@ -10,20 +11,21 @@ describe('My eleventh test suite', () => {
     })
 
     it('Hooks', function () {
+        const homePage = new HomePage()
+        
 
         cy.visit(this.data.url)
-        cy.get(':nth-child(1) > .form-control').type(this.data.name)
-        cy.get("input[class='ng-untouched ng-pristine ng-valid']").should('have.value', this.data.name)
-        cy.get('[name="email"]').type(this.data.email)
-        cy.get('#exampleInputPassword1').type(this.data.password)
-        cy.get('#exampleCheck1').check()
-        cy.get('#exampleFormControlSelect1').select(this.data.gender)
-        // cy.pause()
-        cy.get('#inlineRadio2').click()
+        homePage.getName.type(this.data.name)
+        homePage.getTwoWayDataBindin.should('have.value', this.data.name)
+        homePage.getEmail.type(this.data.email)
+        homePage.getPassword.type(this.data.password)
+        homePage.getCheckBox.check()
+        homePage.getGender.select(this.data.gender)
+        homePage.getEmpRadioBtn.click()
 
-        cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2')
-        cy.get('#inlineRadio3').should('be.disabled')
-        cy.get('[name="bday"]').type("1990-05-01")
+        homePage.getName.should('have.attr', 'minlength', '2')
+        homePage.getEntepreneurRadioBtn.should('be.disabled')
+        homePage.getBirthDay.type("1990-05-01")
         cy.get('.btn-success').click()
 
 

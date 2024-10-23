@@ -13,6 +13,8 @@ class HomePage
         return cy.get("input[class='ng-untouched ng-pristine ng-valid']")
     }
 
+    
+
     getEmail()
     {
 
