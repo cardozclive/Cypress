@@ -15,22 +15,20 @@ describe('My eleventh test suite', () => {
         
 
         cy.visit(this.data.url)
-        homePage.getName.type(this.data.name)
-        homePage.getTwoWayDataBindin.should('have.value', this.data.name)
-        homePage.getEmail.type(this.data.email)
-        homePage.getPassword.type(this.data.password)
-        homePage.getCheckBox.check()
-        homePage.getGender.select(this.data.gender)
-        homePage.getEmpRadioBtn.click()
+        homePage.getName().type(this.data.name)
+        homePage.getTwoWayDataBindin().should('have.value', this.data.name)
+        homePage.getEmail().type(this.data.email)
+        homePage.getPassword().type(this.data.password)
+        homePage.getCheckBox().check()
+        homePage.getGender().select(this.data.gender)
+        homePage.getEmpRadioBtn().click()
 
-        homePage.getName.should('have.attr', 'minlength', '2')
-        homePage.getEntepreneurRadioBtn.should('be.disabled')
-        homePage.getBirthDay.type("1990-05-01")
+        homePage.getName().should('have.attr', 'minlength', '2')
+        homePage.getEntepreneurRadioBtn().should('be.disabled')
+        homePage.getBirthDay().type("1990-05-01")
         cy.get('.btn-success').click()
 
-
-        cy.get('[href*="shop"]').click()
-
+        homePage.getShopTab().click()
 
         this.data.productName.forEach(function (element) {
             cy.selectProduct(element)
