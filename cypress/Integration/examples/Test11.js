@@ -12,16 +12,21 @@ describe('My eleventh test suite', () => {
     it('Hooks', function () {
 
         cy.visit(this.data.url)
-        cy.get('[name="name"]').eq(0).type(this.data.name)
+        cy.get(':nth-child(1) > .form-control').type(this.data.name)
+        cy.get("input[class='ng-untouched ng-pristine ng-valid']").should('have.value', this.data.name)
         cy.get('[name="email"]').type(this.data.email)
         cy.get('#exampleInputPassword1').type(this.data.password)
         cy.get('#exampleCheck1').check()
         cy.get('#exampleFormControlSelect1').select(this.data.gender)
-        cy.pause()
+        // cy.pause()
         cy.get('#inlineRadio2').click()
-        cy.get('.ng-untouched').should('have.value', this.data.name)
+
         cy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2')
         cy.get('#inlineRadio3').should('be.disabled')
+        cy.get('[name="bday"]').type("1990-05-01")
+        cy.get('.btn-success').click()
+
+
         cy.get('[href*="shop"]').click()
 
 
@@ -29,8 +34,9 @@ describe('My eleventh test suite', () => {
             cy.selectProduct(element)
         });
 
-
-
+        cy.get('.nav-link.btn.btn-primary').click()
 
     })
+
+
 })
