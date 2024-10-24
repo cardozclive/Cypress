@@ -61,6 +61,7 @@ describe('My eleventh test suite', () => {
                 } else{
                     cy.log("Sum of total of all products doesn't match")
                 }
+                
         })
         
 
