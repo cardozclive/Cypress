@@ -20,6 +20,7 @@
         cy.get('button.btn-info').eq(index).click()
        }
     })
+    
 } )
 //
 // -- This is a child command --

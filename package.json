@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cypress-waitfor": "^1.1.0",
     "mjpeg-consumer": "^2.0.0"
   },
   "devDependencies": {
