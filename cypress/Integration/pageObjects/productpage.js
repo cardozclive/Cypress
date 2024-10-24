@@ -31,6 +31,11 @@ purchaseBtn()
     return cy.get('.btn.btn-success.btn-lg')
 }
 
+alertMsg()
+{
+    cy.get('.alert-success')
+}
+
 
 
 }
