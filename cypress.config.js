@@ -1,5 +1,17 @@
 const { defineConfig } = require("cypress");
+const preprocessor = require("@cypress/cypress-cucumber-preprocessor");
+const browserify = require("@cypress/browserify-preprocessor");
 
+async function setupNodeEvents(on, config) {
+  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
+  await addCucumberPreprocessorPlugin(on, config);
+  on(
+    "file:preprocessor",
+    browserify(preprendTransformerToOptions(config, browserify.defaultOptions)),
+  );
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
 module.exports = defineConfig({
   env: {
     url: "https://rahulshettyacademy.com"
@@ -12,9 +24,8 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
-    videoOnFailOnly:false, //<<<----------Keep it as false to record all test run videos 
+    videoOnFailOnly: false, //<<<----------Keep it as false to record all test run videos 
   },
-
   video: true,
   retries: {
     runMode: 1,
@@ -31,5 +42,5 @@ module.exports = defineConfig({
     fixturesFolder: "cypress/fixtures",
   },
 
-  
+
 });
