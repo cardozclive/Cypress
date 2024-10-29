@@ -36,8 +36,6 @@ alertMsg()
     cy.get('.alert-success')
 }
 
-
-
 }
 
 export default ProductPage
