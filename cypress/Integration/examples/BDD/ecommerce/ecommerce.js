@@ -76,3 +76,29 @@ Then('select the country, submit and verify thankyou message', () =>
     })
     // productPage.alertMsg().invoke('text').should('contain', "Success! Thank you! Your order will be delivered in next few weeks :-).")
 })
+
+
+Given('I open Ecommerce page',function()
+{
+    cy.visit(Cypress.env('url')+"/angularpractice")
+})
+
+When('I added name, Email, Password, Gender, DOB',function(dataTable)
+{
+    homePage.getName().type(dataTable.rawTable[1][0])
+    homePage.getTwoWayDataBindin().should('have.value', dataTable.rawTable[1][0])
+    homePage.getEmail().type(dataTable.rawTable[1][1])
+    homePage.getPassword().type(dataTable.rawTable[1][2])
+    homePage.getCheckBox().check()
+    homePage.getGender().select(dataTable.rawTable[1][3])
+    homePage.getEmpRadioBtn().click()
+    homePage.getBirthDay().type(dataTable.rawTable[1][4])
+
+} )
+
+Then('Validating minLenght of name field and Enterpreneur Radio Button is disabled',function()
+{
+    homePage.getName().should('have.attr', 'minlength', '2')
+    homePage.getEntepreneurRadioBtn().should('be.disabled')
+
+})
