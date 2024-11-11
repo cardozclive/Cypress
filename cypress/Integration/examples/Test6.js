@@ -8,7 +8,8 @@ describe("My Sixth test suite", function () {
         //first way of iterating through table and asserting value in corresponding element
         cy.get('tr td:nth-child(2)').each(($el, index, $list) => {
             const text = $el.text();
-            if (text.includes('Python')) {
+            if (text.includes('Python'))
+             {
                 cy.wrap($el).next().should('have.text', '25')
 
             }

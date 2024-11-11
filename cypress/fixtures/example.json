@@ -3,5 +3,6 @@
   "email": "test@yopmail.com",
   "password": "Password@123",
   "gender": "Female",
-  "productName" : ["Blackberry", "Nokia Edge", "iphone X"]
+  "productName" : ["Blackberry", "Nokia Edge", "iphone X"],
+  "PratikMobile" : "9876543211"
 }

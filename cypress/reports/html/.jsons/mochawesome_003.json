@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-11-07T07:15:36.588Z",
+    "end": "2024-11-07T07:15:48.451Z",
+    "duration": 11863,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "65ee17a4-dc66-4e41-b6c4-6c8a96b9b04a",
+      "title": "",
+      "fullFile": "cypress\\Integration\\examples\\fakeTest.js",
+      "file": "cypress\\Integration\\examples\\fakeTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "210a921b-5ed1-4b91-9a80-3ea59eb094e2",
+          "title": "API response mocking",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "API response mocking",
+              "fullTitle": "API response mocking API response mocking",
+              "timedOut": null,
+              "duration": 4427,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\Integration\\\\examples\\\\fakeTest.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\fakeTest.js\\\\API response mocking -- API response mocking (failed).png\"\n      ],\n      [\n        \"\\\\fakeTest.js\\\\API response mocking -- API response mocking (failed) (attempt 2).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.intercept({\n  method: 'GET',\n  url: 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty'\n}, {\n  statusCode: 200,\n  body: [{\n    \"book_name\": \"Learn Appium Automation with Java\",\n    \"isbn\": \"RS531\",\n    \"aisle\": \"2275\"\n  }]\n});\ncy.visit('https://rahulshettyacademy.com/angularAppdemo');\ncy.get('div button[type=\"button\"]').click();\ncy.get('app-library-dashboard p').should('have.text', 'Oops only 2 Book available');\ncy.screenshot();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<p>' to have text 'Oops only 2 Book available', but the text was 'Oops only 1 Book available'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p>' to have text 'Oops only 2 Book available', but the text was 'Oops only 1 Book available'\n    at Context.eval (cypress/Integration/examples/fakeTest.js:23:42)",
+                "diff": "- 'Oops only 1 Book available'\n+ 'Oops only 2 Book available'\n"
+              },
+              "uuid": "37b30e59-1d97-4aeb-86ef-740613bab9c8",
+              "parentUUID": "210a921b-5ed1-4b91-9a80-3ea59eb094e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "37b30e59-1d97-4aeb-86ef-740613bab9c8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4427,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "TestReportCypressLearning",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

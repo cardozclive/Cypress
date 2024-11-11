@@ -42,11 +42,6 @@ cy.get('#displayed-text').should('be.visible');
 cy.get('[value="radio2"]').check().should('be.checked')
 
 
-
-
-
-
-
 })
 
 

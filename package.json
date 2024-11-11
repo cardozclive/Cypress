@@ -7,6 +7,12 @@
     "test10": "npx cypress run --browser chrome --headed --spec \"cypress/integration/examples/Test10.js\"",
     "test9": "npx cypress run --browser chrome --headed --spec \"cypress/integration/examples/Test9.js\""
   },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +26,8 @@
     "@cypress/browserify-preprocessor": "^3.0.2",
     "cypress": "^13.15.1",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^3.8.2"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-sql-server": "^1.0.0",
+    "multiple-cucumber-html-reporter": "^3.8.0"
   }
 }
