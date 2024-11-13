@@ -20,7 +20,8 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^21.0.2",
     "cypress-waitfor": "^1.1.0",
-    "mjpeg-consumer": "^2.0.0"
+    "mjpeg-consumer": "^2.0.0",
+    "neat-csv": "^5.1.0"
   },
   "devDependencies": {
     "@cypress/browserify-preprocessor": "^3.0.2",

@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-11T08:43:48.111Z",
+    "end": "2024-11-11T08:43:52.594Z",
+    "duration": 4483,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "45994795-cb2b-431d-9176-e8e9f2cccc8f",
+      "title": "",
+      "fullFile": "cypress\\Integration\\examples\\fakeTest2.js",
+      "file": "cypress\\Integration\\examples\\fakeTest2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "adc74d4d-1715-41f3-8316-0e0238c28b18",
+          "title": "API request mocking",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Api request mocking",
+              "fullTitle": "API request mocking Api request mocking",
+              "timedOut": null,
+              "duration": 734,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\Integration\\\\examples\\\\fakeTest2.js\"\n}",
+              "code": "cy.visit('https://rahulshettyacademy.com/angularAppdemo');\ncy.intercept('GET', 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=shetty', function (req) {\n  req.url = 'https://rahulshettyacademy.com/Library/GetBook.php?AuthorName=malhotra';\n  req[\"continue\"](function (res) {\n    // expect(res.statusCode).to.equal(403)\n  });\n}).as('dummyURL');\ncy.get('div button[type=\"button\"]').click();\ncy.wait('@dummyURL');",
+              "err": {},
+              "uuid": "30bacb6a-8460-449d-a23c-f0599d6a18f2",
+              "parentUUID": "adc74d4d-1715-41f3-8316-0e0238c28b18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30bacb6a-8460-449d-a23c-f0599d6a18f2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 734,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "TestReportCypressLearning",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
