@@ -19,6 +19,7 @@
   "description": "",
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^21.0.2",
+    "convert-excel-to-json": "^1.7.0",
     "cypress-waitfor": "^1.1.0",
     "mjpeg-consumer": "^2.0.0",
     "neat-csv": "^5.1.0"
